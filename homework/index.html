@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Angular Form Validation</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles/main.css">
+	</head>
+	
+	<body id='format'ng-app="app" ng-controller='submitController'>
+
+
+			<section ng-show="correctSubmit">	
+				<form class='form'ng-submit="submit">
+					<h1 id='headline'>Contact Us</h1>
+						
+						<div>Name</div>
+						<input type="text" ng-class="errorType" ng-model="name" placeholder=" Sally Smith">
+						<span ng-bind="fail1"></span>
+					
+						<div>Email</div>
+						<input type="email" ng-model="email" placeholder=" ssmith@gmail.com">
+						<span ng-bind="fail2"></span>
+					
+						<div>Website</div>
+						<input type="text" ng-model="website" placeholder=" http://mssmith.net">
+						<span ng-bind="fail3"></span>
+					
+						<div>Message</div>
+					
+						<textarea type="text" ng-model="message" placeholder=" A friendly message goes here"></textarea>
+						<span ng-bind="fail4"></span>
+						<br>
+					
+						<button type="button">Submit</button>
+				</form><br>
+			</section>
+
+				<div class="correctSubmit" ng-hide="correctSubmit">
+				<br>
+					<span>Thanks for contacting us {{name}}. We have received your message and will be in touch with you shortly.</span>
+
+		<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+		<script type="text/javascript" src="scripts/app.js"></script>
+		<script type="text/javascript" src="scripts/controllers.js"></script>
+
+	</body>
+</html>
