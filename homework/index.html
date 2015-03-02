@@ -13,34 +13,35 @@
 
 
 			<section ng-show="correctSubmit">	
-				<form class='form'ng-submit="submit">
+				<form class='form'ng-submit="submit()">
 					<h1 id='headline'>Contact Us</h1>
 						
 						<div>Name</div>
-						<input type="text" ng-class="errorType" ng-model="name" placeholder=" Sally Smith">
-						<span ng-bind="fail1"></span>
+							<input type="text" ng-class="errorType" ng-model="name"placeholder=" Sally Smith">
+							<span class = "fail1" ng-bind="fail1"></span>
 					
 						<div>Email</div>
-						<input type="email" ng-model="email" placeholder=" ssmith@gmail.com">
-						<span ng-bind="fail2"></span>
+							<input type="text" ng-model="email" placeholder=" ssmith@gmail.com">
+							<span class = "fail2"ng-bind="fail2"></span>
 					
 						<div>Website</div>
-						<input type="text" ng-model="website" placeholder=" http://mssmith.net">
-						<span ng-bind="fail3"></span>
+							<input type="text" ng-model="website" placeholder=" http://mssmith.net">
+							<span class = "fail3"ng-bind="fail3"></span>
 					
 						<div>Message</div>
 					
-						<textarea type="text" ng-model="message" placeholder=" A friendly message goes here"></textarea>
-						<span ng-bind="fail4"></span>
+							<textarea type="text" ng-model="message" placeholder=" A friendly message goes here"></textarea>
+							<span class = "fail4"ng-bind="fail4"></span>
 						<br>
 					
-						<button type="button">Submit</button>
+						<button type="submit">Submit</button>
 				</form><br>
 			</section>
 
-				<div class="correctSubmit" ng-hide="correctSubmit">
+				<div class='correctSubmit' ng-hide="correctSubmit">
 				<br>
 					<span>Thanks for contacting us {{name}}. We have received your message and will be in touch with you shortly.</span>
+				</div>
 
 		<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
 		<script type="text/javascript" src="scripts/app.js"></script>

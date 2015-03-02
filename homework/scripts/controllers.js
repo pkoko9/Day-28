@@ -2,14 +2,10 @@
 angular.module ('app.controllers', [])
 
 	.controller('submitController', function($scope) {
-		
+
 		$scope.correctSubmit = true;
 
-	$scope.fix = function(){
-		$scope.errorType='errorType';
-	}
-
-	$scope.enter = function() {
+	$scope.submit = function() {
 		'use strict';
 		var correctEntry=0;
 
@@ -29,8 +25,9 @@ angular.module ('app.controllers', [])
 		if(angular.isUndefined($scope.name) || $scope.name === "") {
 			$scope.fail1 = failArray[0];
 		} else {
-			$scope.fail11 = undefined;
+			$scope.fail1 = undefined;
 			correctEntry++;
+			console.log('success!')
 		}
 		if(angular.isUndefined($scope.email) || $scope.email === "") {
 			$scope.fail2 = failArray[1];
@@ -42,6 +39,8 @@ angular.module ('app.controllers', [])
 				} else {
 					$scope.fail2 = "";
 					correctEntry++;
+					console.log('success2!')
+					break;
 				}
 			}
 		}
@@ -63,8 +62,9 @@ angular.module ('app.controllers', [])
 		}
 
 		if(correctEntry === 4) {
-			$scope.submitSuccess = false;
+			console.log('this loop ran');
+			$scope.correctSubmit = false;
 		}
 
-	}
+	};
 });
